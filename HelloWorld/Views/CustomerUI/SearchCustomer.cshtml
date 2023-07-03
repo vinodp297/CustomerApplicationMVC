@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/Customer.js"></script>
+<script language="javascript">
+
+    var app = angular.module("myApp", []); // creating a APP
+    
+    app.controller('CustomerViewModel', CustomerViewModel); // Registering the VM
+    // Controller
+</script>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchCustomer</title>
+</head>
+<body ng-app="myApp">
+    <a href="/Home/Index"> Home </a><br />
+    <div ng-controller="CustomerViewModel">
+            Enter Customer Name :- <input ng-model="Customer.CustomerName" 
+                                          name="customer.CustomerName" id="Text1" type="text" />
+            <br />
+        <input id="Submit1" type="button" value="Search Customer" ng-click="LoadByName()" /><br />
+        @Html.Partial("DisplayCustomers")
+    </div>
+    <br />
+</body>
+</html>
